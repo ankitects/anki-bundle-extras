@@ -1,0 +1,10 @@
+We use a custom build of mpv on arm64:
+
+- brew uninstall mpv; brew install mpv.rb
+- bash copy-audio.sh
+- confirm minos is 11 in dist/audio: for f in mpv lame libs/*; do otool -l $f | grep minos; done
+
+Changes in mpv.rb:
+- disabled lua and javascript
+- disabled vapoursynth, which has a Python dependency
+- set deployment target
