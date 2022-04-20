@@ -1,7 +1,7 @@
 #!/bin/bash
 
 qtbase=~/Local/Qt
-desktop=../../dtop
+desktop=../../anki
 
 arch -arch x86_64 python3 prepare-qt.py $qtbase/5.14.2 $desktop amd64/dist/pyqt5
 
