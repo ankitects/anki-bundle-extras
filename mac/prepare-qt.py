@@ -40,26 +40,14 @@ class Arch(Enum):
 
 
 def get_pyqt_root(qt_major: int) -> Path:
-    repo = "pyqt6" if qt_major == 6 else "pyqt514"
-    # ensure pyqt is downloaded
-    subprocess.run(
-        ["bazel", "query", f"@{repo}//:*"],
-        cwd=anki_repo,
-        check=True,
-        stdout=subprocess.DEVNULL,
-    )
-    # get folder
-    base = (
-        subprocess.run(
-            ["bazel", "info", "output_base"],
-            cwd=anki_repo,
-            check=True,
-            capture_output=True,
-        )
-        .stdout.decode("utf8")
-        .strip()
-    )
-    path = Path(base) / "external" / repo / f"PyQt{qt_major}"
+    if qt_major == 6:
+        repo = "pyenv"
+        base = os.path.expanduser("~/Local/build/anki")
+    else:
+        repo = "pyenv-qt5.14"
+        base = os.path.expanduser("~/Local/build/anki-x86")
+    repo = "pyenv" if qt_major == 6 else "pyenv-qt5.14"
+    path = Path(base) / repo / "lib/python3.9/site-packages" / f"PyQt{qt_major}"
     return path
 
 
