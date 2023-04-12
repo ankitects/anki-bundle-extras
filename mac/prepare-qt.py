@@ -161,6 +161,8 @@ def process_plugins(
             "qmltooling",
             "--exclude",
             "designer",
+            "--exclude",
+            "permissions",
             str(plugin_src) + "/",
             plugin_dst,
         ]

@@ -5,8 +5,8 @@
 
 qtbase=~/Local/Qt
 desktop=../../anki
-qtver=6.4.0
-qtvershort=6.4
+qtver=6.5.0
+qtvershort=6.5
 
 python3 prepare-qt.py $qtbase/$qtver $desktop arm64/dist/pyqt6
 arch -arch x86_64 python3 prepare-qt.py $qtbase/$qtver $desktop amd64/dist/pyqt6
