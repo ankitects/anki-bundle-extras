@@ -3,7 +3,7 @@
 set -e
 
 qt5_ver=5.15.2
-qt6_ver=6.2.2
+qt6_ver=6.5.0
 fcitx_ver=5.0.9
 
 build_and_copy() {
