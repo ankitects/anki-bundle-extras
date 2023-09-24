@@ -89,7 +89,6 @@ def process_pyqt(
         "QtNfc",
         "QtBluetooth",
         "QtHelp",
-        "QtQml",
         "QtQuick3D",
         "QtQuickWidgets",
         "QtRemoteObjects",
