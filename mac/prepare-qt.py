@@ -161,6 +161,8 @@ def process_plugins(
             "designer",
             "--exclude",
             "permissions",
+            "--exclude",
+            "*.dSYM",
             str(plugin_src) + "/",
             plugin_dst,
         ]
