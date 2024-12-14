@@ -17,6 +17,7 @@
 #     - WebChannel
 #     - Positioning
 #     - Multimedia
+#     - Image Support
 
 from __future__ import annotations
 
@@ -68,6 +69,7 @@ def codesign(path: Path, extra_args: list[str] = None) -> None:
     codesign_args = [
         "codesign",
         "-vvvv",
+        "-f",
         "-o",
         "runtime",
         "-s",
