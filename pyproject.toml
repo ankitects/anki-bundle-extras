@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "anki-audio"
+version = "0.1.0"
+description = "Audio binaries (mpv, lame) for Anki"
+requires-python = ">=3.9"
+license = {text = "GPL-2.0-or-later"}
+authors = [
+    {name = "Anki Team"},
+]
+urls = {Homepage = "https://github.com/ankitects/anki-bundle-extras"}
+
+[tool.hatch.build.targets.wheel]
+packages = ["anki_audio"]
+artifacts = ["anki_audio/*"]
+
+[tool.hatch.build.targets.wheel.macos]
+macos-max-compat = false
+
+[tool.hatch.build.hooks.custom]
+path = "hatch_build.py"
